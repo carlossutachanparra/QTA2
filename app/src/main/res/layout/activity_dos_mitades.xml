@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#4EFFB0"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+
+        <TextView
+            android:id="@+id/topBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Dos mitades"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_centerInParent="true" />
+
+        <!-- Botón de cerrar (X) -->
+        <ImageView
+            android:id="@+id/closeButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:contentDescription="Cerrar" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+
+            <!-- ... Tu contenido como en el XML original ... -->
+            <!-- Correo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Instrucciones -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Te voy a ayudar a solucionar el problema de las 2 mitades.\n\n1. Ingresa una cadena de caracteres.\n2. Te ayudaré a cortar la cadena en dos partes \\ (si la longitud de la cadena es impar, colocaré el carácter central en la primera cadena, de modo que la primera cadena contenga un carácter más que la segunda).\n3. Luego imprimiré la nueva cadena en una sola fila con la primera y la segunda mitad intercambiadas (la segunda mitad es la primera y la primera mitad es la segunda)"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <!-- Input -->
+            <EditText
+                android:id="@+id/inputTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#4EFFB0"
+                android:hint="Ingresa una cadena de caracteres"
+                android:inputType="text"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <!-- Botón -->
+            <Button
+                android:id="@+id/btnSolucionar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:backgroundTint="#4EFFB0"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="8dp"
+                android:text="Solucionar"
+                android:textColor="#000000" />
+
+            <!-- Nombre del usuario -->
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:padding="6dp"
+                android:text="Luisa Garzón"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation ALWAYS visible abajo -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="4dp"
+        android:background="#f3edf7"
+        android:foregroundGravity="center"
+        app:itemIconSize="31dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu"
+        tools:layout_editor_absoluteX="0dp"/>
+
+</LinearLayout>
