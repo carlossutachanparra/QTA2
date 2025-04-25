@@ -8,10 +8,10 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class DosMitadesActivity : AppCompatActivity() {
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dos_mitades) // Usa el nombre exacto de tu layout
@@ -29,6 +29,29 @@ class DosMitadesActivity : AppCompatActivity() {
             }
         }
 
+        // ------ BOTTOM NAVIGATION ------
+        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.dos_mitades -> {
+                    // Ya estamos en esta activity
+                    true
+                }
+                R.id.dos_palabras -> {
+                    startActivity(Intent(this, DosPalabrasActivity::class.java))
+                    finish()
+                    true
+                }
+                R.id.quitar_fragmento -> {
+                    startActivity(Intent(this, quitarfragmentoActivity::class.java))
+                    finish()
+                    true
+                }
+                else -> false
+            }
+        }
+        // Esto marca el ítem actual como seleccionado en la barra
+        bottomNav.selectedItemId = R.id.dos_mitades
 
         val closeButton = findViewById<ImageView>(R.id.closeButton)
 
