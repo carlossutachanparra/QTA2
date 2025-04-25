@@ -1,9 +1,11 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -25,6 +27,15 @@ class dosmitadesActivity : AppCompatActivity() {
             } else {
                 resultado.text = "Por favor ingrese una cadena de texto"
             }
+        }
+
+
+        val closeButton = findViewById<ImageView>(R.id.closeButton)
+
+        closeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // Opcional: cierra esta actividad actual para que no quede en el stack
         }
     }
 
