@@ -4,16 +4,17 @@
     <item
         android:id="@+id/dos_mitades"
         android:icon="@drawable/dos_mitades"
-        android:title="@string/dos_mitades" />
+        android:title="/dos_mitades"
+        />
 
     <item
         android:id="@+id/dos_palabras"
         android:icon="@drawable/dos_palabras"
-        android:title="@string/dos_palabras" />
+        android:title="dos_palabras" />
 
     <item
         android:id="@+id/quitar_fragmento"
         android:icon="@drawable/dos_fragmentos"
-        android:title="@string/quitar_fragmento" />
+        android:title="quitar_fragmento" />
 
 </menu>
