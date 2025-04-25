@@ -95,15 +95,14 @@
 
             <!-- Nombre del usuario -->
             <TextView
-                android:id="@+id/userName"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvResultado"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
-                android:padding="6dp"
-                android:text="Luisa Garzón"
-                android:textColor="#ffffff"
-                android:textSize="16sp" />
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:gravity="center"/>
         </LinearLayout>
     </ScrollView>
 
