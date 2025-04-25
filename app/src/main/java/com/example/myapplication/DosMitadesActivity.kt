@@ -1,15 +1,17 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class dosmitadesActivity : AppCompatActivity() {
+class DosMitadesActivity : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dos_mitades) // Usa el nombre exacto de tu layout
@@ -27,29 +29,14 @@ class dosmitadesActivity : AppCompatActivity() {
             }
         }
 
-        // ------ BOTTOM NAVIGATION ------
-        val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.dos_mitades -> {
-                    // Ya estamos en esta activity
-                    true
-                }
-                R.id.dos_palabras -> {
-                    startActivity(Intent(this, dospalabrasActivity::class.java))
-                    finish()
-                    true
-                }
-                R.id.quitar_fragmento -> {
-                    startActivity(Intent(this, quitarfragmentoActivity::class.java))
-                    finish()
-                    true
-                }
-                else -> false
-            }
+
+        val closeButton = findViewById<ImageView>(R.id.closeButton)
+
+        closeButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish() // Opcional: cierra esta actividad actual para que no quede en el stack
         }
-        // Esto marca el ítem actual como seleccionado en la barra
-        bottomNav.selectedItemId = R.id.dos_mitades
     }
 
     // Función que intercambia las mitades siguiendo el enunciado

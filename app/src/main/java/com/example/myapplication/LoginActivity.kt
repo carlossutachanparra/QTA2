@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -23,19 +24,14 @@ class LoginActivity : AppCompatActivity() {
         // Referencias a los campos
         val emailField = findViewById<EditText>(R.id.editTextEmail)
         val passwordField = findViewById<EditText>(R.id.editTextPassword)
+
+
         val botonIngresar = findViewById<Button>(R.id.botonIngresar)
 
-        // Validación de campos
         botonIngresar.setOnClickListener {
-            val email = emailField.text.toString().trim()
-            val password = passwordField.text.toString().trim()
-
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Por favor llena todos los campos", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(this, "¡Inicio correcto (sin conexión aún)!", Toast.LENGTH_SHORT).show()
-                // Aquí luego puedes llamar a Firebase Authentication
-            }
+            val intent = Intent(this, DosMitadesActivity::class.java)
+            startActivity(intent)
         }
     }
 }
+
