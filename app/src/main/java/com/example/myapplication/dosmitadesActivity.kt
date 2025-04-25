@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class dosmitadesActivity : AppCompatActivity() {
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dos_mitades) // Usa el nombre exacto de tu layout
